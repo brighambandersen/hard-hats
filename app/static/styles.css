@@ -1,0 +1,14 @@
+body {
+  background-color: lightyellow;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section {
+  margin: 2rem 0;
+}
+
+.change-language {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+}
