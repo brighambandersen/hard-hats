@@ -12,3 +12,11 @@ body {
   justify-content: flex-end;
   margin: 1rem;
 }
+
+.field {
+  padding: 0.5rem;
+}
+
+label {
+  margin-right: 0.5rem;
+}
