@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block body %}
+
+<div class="change-language">
+  <button>Español</button>
+</div>
+<div class="section get-started">
+  <h2>Let's Get Started...</h2>
+  <div><button>Future Employee</button> OR <button>Business Owner</button></div>
+</div>
+<div class="section basic-info">
+  <h2>Tell us about yourself...</h2>
+  <p>First Name</p>
+  <p>Middle Name</p>
+  <p>Last Name</p>
+  <p>Picture Upload</p>
+  <p>Phone Number</p>
+  <p>Email</p>
+</div>
+<div class="section address-info">
+  <h2>Where are you living?</h2>
+  <p>Address Search</p>
+</div>
+<div class="section target-salary-info">
+  <h2>What is your target salary range?</h2>
+  <div>
+    <button>$20,000-$30,000</button>
+  </div>
+  <div>
+    <button>$30,000-$40,000</button>
+  </div>
+  <div>
+    <button>$40,000+</button>
+  </div>
+</div>
+<div class="section top-benefits-info">
+  <h2>What do you look for in a company?</h2>
+  <p>(Select your top 3)</p>
+  <button>High Salary</button>
+  <button>Reliable Hours</button>
+  <button>Good People</button>
+  <button>Vacation Time</button>
+  <button>Integrity</button>
+  <button>Insurance Benefits</button>
+  <button>Consistent Pay</button>
+  <button>Good Location</button>
+</div>
+<div class="section resume-info">
+  <h2>Send us your resume...</h2>
+  <button>Resume Upload</button>
+</div>
+<div class="section certifications-info">
+  <h2>What cerifications do you have?</h2>
+  <button>Crane</button>
+  <button>Massive Thing</button>
+  <button>Forklift</button>
+  <button>Steamroller</button>
+  <button>Big Tractor Thing</button>
+  <button>Excavator</button>
+</div>
+<div class="section top-traits-info">
+  <h2>What makes you valuable and unique?</h2>
+  <button>5+ Years Experience</button>
+  <button>Self-Help Book Reader</button>
+  <button>10+ Years Experience</button>
+  <button>DIY'er</button>
+  <button>Multilingual</button>
+  <button>Religious Volunteer</button>
+  <button>Punctual</button>
+  <button>2+ Years Experience</button>
+</div>
+<div class="section additional-info">
+  <h2>Anything you would like to add?</h2>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+</div>
+
+<form action="{% url 'apply' %}" method="post">
+  {% csrf_token %}
+  <input type="text" name="first_name" />
+  <!-- {{ form }} -->
+  <input type="submit" />
+</form>
+
+{% endblock %}
