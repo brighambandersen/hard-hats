@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseBadRequest
-from .models import Employee
+from .models import Profile
 
 
 def index(request):
@@ -10,13 +10,19 @@ def index(request):
 def apply(request):
     if request.method != "POST":
         return HttpResponseBadRequest("This endpoint only allows POST")
+    # Parse fields from request
     first_name = request.POST.get("first_name")
     middle_name = request.POST.get("middle_name")
     last_name = request.POST.get("last_name")
 
+    # Build profile and add to DB
+    profile = Profile()
+    profile.first_name = first_name
+    profile.save()
+
+    # Build employee and add to DB
     employee = Employee()
-    employee.first_name = first_name
-    employee.save()
+
     return redirect(success)
     # first_name = request.POST["first_name"] # .get("first_name")
     # last_name = request.POST["last_name"]
