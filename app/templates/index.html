@@ -1,18 +1,8 @@
 {% extends "base.html" %} {% block body %}
 
-<div class="change-language">
-  <button>Español</button>
-</div>
 <form action="{% url 'apply' %}" method="post">
   {% csrf_token %}
-  <!-- {{ form }} -->
-  <!-- <div class="section get-started">
-    <h2>Let's Get Started...</h2>
-    <div>
-      <button>Future Employee</button> OR <button>Business Owner</button>
-    </div>
-  </div> -->
-  <div class="section basic-info">
+  <section class="basic-info">
     <h2>Tell us about yourself...</h2>
     <div class="field">
       <label for="first_name">First Name</label>
@@ -20,17 +10,7 @@
         id="first_name"
         type="text"
         name="first_name"
-        maxlength="100"
-        required
-      />
-    </div>
-    <div class="field">
-      <label for="middle_name">Middle Name</label>
-      <input
-        id="middle_name"
-        type="text"
-        name="middle_name"
-        maxlength="100"
+        maxlength="255"
         required
       />
     </div>
@@ -40,29 +20,57 @@
         id="last_name"
         type="text"
         name="last_name"
-        maxlength="100"
+        maxlength="255"
         required
       />
     </div>
-    <p>Picture Upload</p>
-    <p>Phone Number</p>
-    <p>Email</p>
-  </div>
-  <!-- <div class="section address-info">
-    <h2>Where are you living?</h2>
-    <p>Address Search</p>
-  </div>
-  <div class="section target-salary-info">
+    <div class="field">
+      <label for="phone_number">Phone Number</label>
+      <input
+        id="phone_number"
+        type="tel"
+        name="phone_number"
+        maxlength="20"
+        required
+      />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" maxlength="255" required />
+    </div>
+    <div class="field">
+      <label for="address">Address</label>
+      <textarea
+        id="address"
+        name="address"
+        rows="4"
+        cols="50"
+        maxlength="255"
+        required
+      ></textarea>
+    </div>
+  </section>
+  <section>
+    <h2>Other helpful links</h2>
+    <div class="field">
+      <label for="profile_picture_url">Profile Picture URL</label>
+      <input
+        id="profile_picture_url"
+        type="text"
+        name="profile_picture_url"
+        maxlength="200"
+      />
+    </div>
+    <div class="field">
+      <label for="resume_url">Resume URL</label>
+      <input id="resume_url" type="text" name="resume_url" maxlength="200" />
+    </div>
+  </section>
+  <section>
+    <h2>Technical questions</h2>
     <h2>What is your target salary range?</h2>
-    <div>
-      <button>$20,000-$30,000</button>
-    </div>
-    <div>
-      <button>$30,000-$40,000</button>
-    </div>
-    <div>
-      <button>$40,000+</button>
-    </div>
+    <input id="target_salary" type="text" name="target_salary" maxlength="200" />
+  </section>
   </div>
   <div class="section top-benefits-info">
     <h2>What do you look for in a company?</h2>
@@ -106,16 +114,8 @@
   </div> -->
   <div class="section wrap-up">
     <h2>That's everything! Hit 'Submit' below and we'll handle the rest.</h2>
-    <input type="submit" />
+    <button type="submit">Submit</button>
   </div>
 </form>
-<!-- <br />
-<br />
-<div class="section share-link">
-  <h2>
-    Share this right now click this link thingy. Do it. Right now. Please.
-  </h2>
-  <button>Click the Thingy Right Here</button>
-</div> -->
 
 {% endblock %}

@@ -1,16 +1,11 @@
 body {
   background-color: lightyellow;
   font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
 
-.section {
+section {
   margin: 2rem 0;
-}
-
-.change-language {
-  display: flex;
-  justify-content: flex-end;
-  margin: 1rem;
 }
 
 .field {
@@ -19,4 +14,8 @@ body {
 
 label {
   margin-right: 0.5rem;
+}
+
+button {
+  font-size: large;
 }
