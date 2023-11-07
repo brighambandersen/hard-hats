@@ -1,11 +1,6 @@
 from django.contrib import admin
-from app.models import Profile, Employee
+from app.models import UserProfile, SurveyQuestion, SurveyResponse
 
-
-class ProfileAdmin(admin.ModelAdmin):
-    readonly_fields = ("id",)
-
-
-# Register your models here.
-admin.site.register(Profile, ProfileAdmin)
-admin.site.register(Employee)
+admin.site.register(UserProfile)
+admin.site.register(SurveyQuestion)
+admin.site.register(SurveyResponse)
