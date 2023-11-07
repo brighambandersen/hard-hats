@@ -16,7 +16,7 @@ class UserProfile(models.Model):
 
 
 class SurveyQuestion(models.Model):
-    question_id = models.TextField(primary_key=True)
+    question_id = models.AutoField(primary_key=True)
     question_text = models.TextField()
 
     def __str__(self):

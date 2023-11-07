@@ -24,11 +24,35 @@ def apply(request):
     user_profile.save()
 
     # Build survey responses and add to DB
-    survey_response = SurveyResponse()
-    survey_response.user = user_profile
-    survey_response.question_id = 1
-    survey_response.response_text = request.POST.get("target_salary")
-    survey_response.save()
+    survey_response1 = SurveyResponse()
+    survey_response1.user = user_profile
+    survey_response1.question_id = 1
+    survey_response1.response_text = request.POST.get("salary_range")
+    survey_response1.save()
+
+    survey_response2 = SurveyResponse()
+    survey_response2.user = user_profile
+    survey_response2.question_id = 2
+    survey_response2.response_text = request.POST.get("company_benefits")
+    survey_response2.save()
+
+    survey_response3 = SurveyResponse()
+    survey_response3.user = user_profile
+    survey_response3.question_id = 3
+    survey_response3.response_text = request.POST.get("certifications")
+    survey_response3.save()
+
+    survey_response4 = SurveyResponse()
+    survey_response4.user = user_profile
+    survey_response4.question_id = 4
+    survey_response4.response_text = request.POST.get("skills_and_experience")
+    survey_response4.save()
+
+    survey_response5 = SurveyResponse()
+    survey_response5.user = user_profile
+    survey_response5.question_id = 5
+    survey_response5.response_text = request.POST.get("any_additions")
+    survey_response5.save()
 
     return redirect(success)
 
